@@ -16,6 +16,8 @@ package com.renatus.games.reversi.services.view
 		//Current starling instance juggler, for animate view's.
 		private var _currJugler:Juggler;
 		
+		private var _initComplete:Function;
+		
 		/**
 		 * Constructor.
 		 */
@@ -27,6 +29,7 @@ package com.renatus.games.reversi.services.view
 		 */
 		public function init( stage:Stage, onComplete:Function ):void
 		{
+			_initComplete = onComplete;
 		}
 		
 		/**
@@ -65,7 +68,7 @@ package com.renatus.games.reversi.services.view
 		 */
 		public function isViewRegistered( id:uint ):Boolean
 		{
-			
+			return false;
 		}
 		
 		public function tween(target:Object, time:Number, properties:Object) : uint

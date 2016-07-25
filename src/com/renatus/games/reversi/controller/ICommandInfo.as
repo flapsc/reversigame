@@ -9,6 +9,7 @@ package com.renatus.games.reversi.controller
 	{
 		function get eventType():String;
 		function get commandImpl():Class;
+		function get isSingleExecutable():Boolean;
 		function get mapIndex():uint;
 		function destroy():void;
 	}

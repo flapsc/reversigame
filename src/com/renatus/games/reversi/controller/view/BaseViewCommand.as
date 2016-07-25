@@ -38,7 +38,12 @@ package com.renatus.games.reversi.controller.view
 			{
 				_context = context;
 				_eventView = eventModel as ViewEvent;
-				return internalExecute();
+				const res:Boolean = internalExecute();
+				
+				_context = null;
+				_eventView = null;
+				
+				return res;
 			}
 			else
 			{

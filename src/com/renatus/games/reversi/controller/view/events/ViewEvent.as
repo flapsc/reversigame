@@ -11,11 +11,13 @@ package com.renatus.games.reversi.controller.view.events
 		
 		static public const SHOW_VIEW:String = "view.events.SHOW_VIEW";
 		static public const HIDE_VIEW:String = "view.events.HIDE_VIEW";
+		static public const REGISTER_ALL_VIEWS:String = "view.events.REGISTER_ALL_VIEWS";
+		static public const REGISTER_VIEW_COMMANDS:String = "view.events.registerViewCommands";
 		
 		/* Current View id */
 		private var _viewId:uint;
 		
-		public function ViewEvent(type:String, id:uint, bubbles:Boolean=false, cancelable:Boolean=false)
+		public function ViewEvent(type:String, id:uint=0, bubbles:Boolean=false, cancelable:Boolean=false)
 		{ 
 			super(type, bubbles, cancelable);
 			_viewId = id;
@@ -33,7 +35,7 @@ package com.renatus.games.reversi.controller.view.events
 		}
 		
 		/* Current View id */
-		public final function get viewId(){ return _viewId; }
+		public final function get viewId():uint{ return _viewId; }
 		
 	}
 	

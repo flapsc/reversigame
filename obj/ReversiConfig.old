@@ -14,7 +14,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'25.07.2016'</value>
+      <value>'26.07.2016'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -30,15 +30,15 @@
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>C:\work\renatus\games\reversi\src</path-element>
+      <path-element>C:\work\renatus\games\git\src</path-element>
       <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
     <library-path append="true">
-      <path-element>C:\work\renatus\games\reversi\lib\starling.swc</path-element>
+      <path-element>C:\work\renatus\games\git\lib\starling.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>C:\work\renatus\games\reversi\src\com\renatus\games\reversi\ReversiDocumentClass.as</path-element>
+    <path-element>C:\work\renatus\games\git\src\com\renatus\games\reversi\ReversiDocumentClass.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>
