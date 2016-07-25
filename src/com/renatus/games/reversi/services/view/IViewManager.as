@@ -1,6 +1,7 @@
 package com.renatus.games.reversi.services.view 
 {
 	import flash.display.Stage;
+	import flash.geom.Rectangle;
 	/**
 	 * Base interface of view manager.
 	 * @author Mihaylenko A.L.
@@ -41,6 +42,12 @@ package com.renatus.games.reversi.services.view
 		 * @return result.
 		 */
 		function isViewRegistered( id:uint ):Boolean;
+		
+		function tween(target:Object, time:Number, properties:Object) : uint;
+		
+		function removeTween(id:uint);
+		
+		function get viewPort():Rectangle;
 		
 	}
 	

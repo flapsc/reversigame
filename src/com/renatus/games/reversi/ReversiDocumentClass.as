@@ -1,8 +1,5 @@
 package com.renatus.games.reversi 
 {
-	import com.renatus.games.reversi.controller.view.ShowViewCommand;
-	import flash.display.DisplayObject;
-	import flash.display.Sprite;
 	import flash.events.Event;
 	
 	/**

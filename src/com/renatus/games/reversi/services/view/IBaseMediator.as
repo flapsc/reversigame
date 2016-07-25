@@ -17,15 +17,14 @@ package com.renatus.games.reversi.services.view
 		/**
 		 * Show target view.
 		 * @param	displayList - Current display list, for add view.
-		 * @param 	onComplete - callback, executes when show view complete.
 		 */
-		function show( displayList:Object, onComplete:Function=null ):void;
+		function show( displayList:Object ):void;
 		
 		/**
 		 * Hide current view, 
-		 * @param	onComplete - callback, executes when hide target view complete.
+		 * @param hideComplete - callback, executes when hide complete.
 		 */
-		function hide( onComplete:Function = null ):void;
+		function hide( hideComplete:Function ):void;
 		
 		/**
 		 * Destroy allocated data.

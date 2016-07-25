@@ -7,8 +7,6 @@ package com.renatus.games.reversi.controller.view
 	 */
 	public class ShowViewCommand extends BaseViewCommand
 	{
-		public function ShowViewCommand(){}
-		
 		internal final override function internalExecute():Boolean
 		{
 			const viewManager:IViewManager = _context.viewManager;

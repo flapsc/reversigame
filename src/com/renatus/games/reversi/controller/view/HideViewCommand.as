@@ -6,11 +6,11 @@ package com.renatus.games.reversi.controller.view
 	 */
 	public class HideViewCommand extends BaseViewCommand 
 	{
-		
-		public function HideViewCommand() 
+		internal final override function internalExecute():Boolean
 		{
+			_context.viewManager.hideAllViewById(_eventView.viewId);
+			return true;
 		}
-		
 	}
 
 }

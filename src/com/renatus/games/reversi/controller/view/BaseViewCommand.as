@@ -1,9 +1,11 @@
 package com.renatus.games.reversi.controller.view 
 {
+	import avmplus.getQualifiedClassName;
 	import com.renatus.games.reversi.controller.view.events.ViewEvent;
 	import flash.events.Event;
 	import com.renatus.games.reversi.IGameContext;
 	import com.renatus.games.reversi.controller.ICommand;
+	import flash.system.Capabilities;
 	
 	/**
 	 * Base view event
@@ -17,7 +19,12 @@ package com.renatus.games.reversi.controller.view
 		
 		public function BaseViewCommand() 
 		{
-			throw new RangeError("BaseViewCommand$ class cannot be instantiated", 2012);
+			
+            if (Capabilities.isDebugger && 
+                getQualifiedClassName(this) == "com.renatus.games.reversi.controller.view.BaseViewCommand")
+            {
+				throw new RangeError("BaseViewCommand$ class cannot be instantiated", 2012);
+            }			
 		}
 		
 		/**

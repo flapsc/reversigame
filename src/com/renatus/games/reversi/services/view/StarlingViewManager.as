@@ -1,12 +1,21 @@
 package com.renatus.games.reversi.services.view 
 {
 	import flash.display.Stage;
+	import flash.geom.Rectangle;
+	import starling.animation.Juggler;
+	import starling.core.Starling;
 	/**
 	 * ...
 	 * @author Mihaylenko A.L.
 	 */
 	public final class StarlingViewManager implements IViewManager 
 	{
+		private var _viewPort:Rectangle;
+		
+		private var _starling:Starling;
+		//Current starling instance juggler, for animate view's.
+		private var _currJugler:Juggler;
+		
 		/**
 		 * Constructor.
 		 */
@@ -18,7 +27,6 @@ package com.renatus.games.reversi.services.view
 		 */
 		public function init( stage:Stage, onComplete:Function ):void
 		{
-			
 		}
 		
 		/**
@@ -59,6 +67,18 @@ package com.renatus.games.reversi.services.view
 		{
 			
 		}
+		
+		public function tween(target:Object, time:Number, properties:Object) : uint
+		{
+			return _currJugler.tween(target, time, properties);
+		}
+		
+		public function removeTween(id:uint):void
+		{
+			_currJugler.removeByID(id);
+		}
+		
+		public function get viewPort():Rectangle{ return _viewPort; }
 	}
 
 }
