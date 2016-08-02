@@ -1,0 +1,19 @@
+{
+	"fieldEntityViewSize":60,
+	"fieldViewCellBgFillColor":"0xE5E5E5",
+	"fieldViewCellBgLineColor":"0x5B0000",
+	"fieldSize":8,
+	"fieldCellEntityAssetNamePrefix":"field_entity_",
+	"defaultInitialState":
+		[
+			[0,0,0,0,0,0,0,0],
+			[0,0,0,0,0,0,0,0],
+			[0,0,0,0,0,0,0,0],
+			[0,0,0,2,1,0,0,0],
+			[0,0,0,1,2,0,0,0],
+			[0,0,0,0,0,0,0,0],
+			[0,0,0,0,0,0,0,0],
+			[0,0,0,0,0,0,0,0]
+		],
+	"filedViewSize":500
+}

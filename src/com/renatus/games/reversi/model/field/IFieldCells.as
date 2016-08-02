@@ -9,14 +9,15 @@ package com.renatus.games.reversi.model.field
 	{
 		/**
 		 * Initlize game field, 
-		 * @param	Current size of field matrix size X size
+		 * @param	size - Current size of field matrix size X size
+		 * @param	initialState - Current field cells initial state.
 		 */
-		function init( size:uint ):void;
+		function init( size:uint, initialState:Vector.<Vector.<uint>> ):void;
 		
 		/**
-		 * Reset field cells to initialize state( all cells is empty @see enums.CellState.EMPTY )
+		 * Reset field cells to initialize state
 		 */
-		function reset():void;
+		function reset(initialState:Vector.<Vector.<uint>>):void;
 		
 		/**
 		 * Clean up allocated data.
@@ -30,5 +31,10 @@ package com.renatus.games.reversi.model.field
 		 * @return field cell model.
 		 */
 		function getCellAt( x:uint, y:uint ):ICell;
+		
+		/**
+		 * Current game field cells model.
+		 */
+		function get cells():Vector.<ICell>;
 	}
 }

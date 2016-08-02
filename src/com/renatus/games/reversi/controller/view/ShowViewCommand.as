@@ -1,6 +1,6 @@
 package com.renatus.games.reversi.controller.view 
 {
-	import com.renatus.games.reversi.services.view.IViewManager;
+	import com.renatus.games.reversi.services.view.api.IViewManager;
 	/**
 	 * View manager command, show registered view.
 	 * @author Mihaylenko A.L.
@@ -13,7 +13,7 @@ package com.renatus.games.reversi.controller.view
 			
 			if ( viewManager.isViewRegistered(_eventView.viewId) )
 			{
-				viewManager.showView(_eventView.viewId);
+				viewManager.showView(_eventView.viewId, _context);
 				return true;
 			}
 			else

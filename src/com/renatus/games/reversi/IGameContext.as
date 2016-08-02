@@ -1,10 +1,12 @@
 package com.renatus.games.reversi 
 {
+	import com.renatus.games.reversi.model.IReversiGameModel;
 	import com.renatus.games.reversi.services.log.ILogger;
-	import com.renatus.games.reversi.services.view.IViewManager;
+	import com.renatus.games.reversi.services.view.api.IViewManager;
 	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.IEventDispatcher;
+	import starling.utils.AssetManager;
 	
 	/**
 	 * Dispatched when game context are initialization ready
@@ -23,8 +25,16 @@ package com.renatus.games.reversi
 		 * Initialize game context
 		 * @param	stage - current application flash.display.stage
 		 * @param	viewManagerClassImpl IViewManager class implementation.
+		 * @param	gameModelClassImpl IReversiGameModel class implementation
+		 * @param	loggerClassImpl ILogger class implementation.
 		 */
-		function init( stage:Stage, viewManagerClassImpl:Class, loggerClassImpl:Class ):void;
+		function init
+		( 
+			stage:Stage, 
+			viewManagerClassImpl:Class, 
+			gameModelClassImpl:Class,
+			loggerClassImpl:Class
+		):void;
 		
 		/**
 		 * 
@@ -47,6 +57,21 @@ package com.renatus.games.reversi
 		 */
 		function get viewManager():IViewManager;
 		
+		/**
+		 * Public property( read only ).
+		 */
 		function get logger():ILogger;
+		
+		/**
+		 * Public property( read only )
+		 * Current starling asset manager instance.
+		 */
+		function get assetManager():AssetManager;
+		
+		/**
+		 * Current reversi game model
+		 */
+		function get gameModel():IReversiGameModel;
+		
 	}
 }

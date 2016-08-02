@@ -1,8 +1,9 @@
 package com.renatus.games.reversi 
 {
 	import com.renatus.games.reversi.controller.StartupCommand;
+	import com.renatus.games.reversi.model.ReversiGameModel;
 	import com.renatus.games.reversi.services.log.TraceLogger;
-	import com.renatus.games.reversi.services.view.StarlingViewManager;
+	import com.renatus.games.reversi.services.view.impl.starling.StarlingViewManager;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	
@@ -32,10 +33,9 @@ package com.renatus.games.reversi
 			{
 				removeEventListener(Event.ADDED_TO_STAGE, init);
 			}
-			
 			_gameContext = new GameContext();
 			_gameContext.registrerCommand(Event.COMPLETE, StartupCommand, true);
-			_gameContext.init(stage, StarlingViewManager, TraceLogger);
+			_gameContext.init(stage, StarlingViewManager, ReversiGameModel, TraceLogger);
 		}
 	}
 }
