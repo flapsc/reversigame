@@ -193,6 +193,7 @@
             <key type="filename">images/intro_background.png</key>
             <key type="filename">images/intro_btn_play.png</key>
             <key type="filename">images/intro_btn_play_disable.png</key>
+            <key type="filename">images/restart_btn.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
