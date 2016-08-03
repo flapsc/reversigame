@@ -44,8 +44,6 @@ package com.renatus.games.reversi.model.vo.config
 				_defaultInitialState[i] = Vector.<uint>(data.defaultInitialState[i]);
 				_defaultInitialState[i].fixed = true;
 			}
-			
-			trace( _defaultInitialState );
 		}
 		
 		/**

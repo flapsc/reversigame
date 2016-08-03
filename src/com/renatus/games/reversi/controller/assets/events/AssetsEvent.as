@@ -1,4 +1,4 @@
-package com.renatus.games.reversi.controller.assets 
+package com.renatus.games.reversi.controller.assets.events 
 {
 	import flash.events.Event;
 	

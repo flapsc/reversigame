@@ -1,7 +1,7 @@
 {
 	"fieldEntityViewSize":60,
-	"fieldViewCellBgFillColor":"0xE5E5E5",
-	"fieldViewCellBgLineColor":"0x5B0000",
+	"fieldViewCellBgFillColor":"0xE8CF8C",
+	"fieldViewCellBgLineColor":"0x8C6D1C",
 	"fieldSize":8,
 	"fieldCellEntityAssetNamePrefix":"field_entity_",
 	"defaultInitialState":

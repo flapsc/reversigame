@@ -1,5 +1,6 @@
 package com.renatus.games.reversi.model.field 
 {
+	import com.renatus.games.reversi.model.player.IPlayer;
 	
 	/**
 	 * Base interface of field cells.
@@ -24,17 +25,29 @@ package com.renatus.games.reversi.model.field
 		 */
 		function destroy():void;
 		
-		/**
-		 * Current game field cell
-		 * @param	x - Current cell x
-		 * @param	y - Current cell y
-		 * @return field cell model.
-		 */
-		function getCellAt( x:uint, y:uint ):ICell;
+		function getCellAt(x:uint, y:uint):ICell;
+		
+		function get cells():Vector.<ICell>;
 		
 		/**
-		 * Current game field cells model.
+		 * Calculation of possible moves, for current player.
+		 * @param	player - Player model, for calculate and cashed foundet moves.
 		 */
-		function get cells():Vector.<ICell>;
+		function calculatecPossibleMoves( player:IPlayer ):void;
+		
+		/**
+		 * When player choose a move, then make move in a model
+		 * @param	player - Current player model.
+		 * @return	The result of a move by the player
+		 */
+		function makeMove( player:IPlayer ):Boolean;
+		
+		/**
+		 * Calculate count cells with current cell state
+		 * @param	cellState - Current cell state.
+		 * @return calculated cells number.
+		 */
+		function getCountFieldCellsByState( cellState:uint ):uint;
+		
 	}
 }

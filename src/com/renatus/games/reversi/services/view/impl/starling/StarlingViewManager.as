@@ -52,10 +52,10 @@ package com.renatus.games.reversi.services.view.impl.starling
 			_activeViewMediator = Vector.<IBaseMediator>([]);
 			
 			_viewPort = new Rectangle(0, 0, stage.stageWidth, stage.stageHeight);
-            Starling.multitouchEnabled = true; // for Multitouch Scene
-
+            Starling.multitouchEnabled = false; // for Multitouch Scene
             _starling = new Starling(BaseStarlingView, stage, _viewPort);
-            _starling.simulateMultitouch = true;
+			//_starling.touchProcessor
+            _starling.simulateMultitouch = false;
             _starling.skipUnchangedFrames = true;
             _starling.enableErrorChecking = Capabilities.isDebugger;
 			_starling.addEventListener(Event.ROOT_CREATED, starling_ROOT_CREATERD_Handler);

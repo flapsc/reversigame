@@ -36,7 +36,7 @@
         <key>dataFormat</key>
         <string>sparrow</string>
         <key>textureFileName</key>
-        <filename></filename>
+        <filename>game-atlass.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>pvrCompressionQuality</key>
@@ -141,7 +141,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename></filename>
+                <filename>game-atlass.xml</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -187,9 +187,21 @@
             <false/>
         </struct>
         <key>individualSpriteSettings</key>
-        <map type="IndividualSpriteSettingsMap"/>
+        <map type="IndividualSpriteSettingsMap">
+            <key type="filename">images/field_entity_1.png</key>
+            <key type="filename">images/field_entity_2.png</key>
+            <key type="filename">images/intro_background.png</key>
+            <key type="filename">images/intro_btn_play.png</key>
+            <key type="filename">images/intro_btn_play_disable.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+            </struct>
+        </map>
         <key>fileList</key>
-        <array/>
+        <array>
+            <filename>images</filename>
+        </array>
         <key>ignoreFileList</key>
         <array/>
         <key>replaceList</key>

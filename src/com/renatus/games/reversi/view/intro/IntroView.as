@@ -51,16 +51,16 @@ package com.renatus.games.reversi.view.intro
 			addChild(_background);
 			
 			_btnPlay = new Button( assetManager.getTexture(PLAY_BTN_TEXTNAME), "",null,null,assetManager.getTexture(PLAY_BTN_DISABLE_TEXTNAME));
-			_btnPlay.scaleWhenDown = -1;
+			_btnPlay.scaleWhenDown = .9;
 			_btnPlay.scaleWhenOver = 1.1;
 			
 			_btnPlay.x = (_background.width - _btnPlay.width) * .5;
 			_btnPlay.y = _background.height - _btnPlay.height * .5;
-			_btnPlay.enabled = false;
+			//_btnPlay.enabled = false;
 			addChild( _btnPlay );
 			
 			var textFieldFormat:TextFormat = new TextFormat(StaticFontService.globalAppFontName, 25, 0x000000);
-			var textHeight:uint = 40;
+			var textHeight:uint = 80;
 			_tfInfo = new TextField(_background.width,  textHeight, "", textFieldFormat);
 			_tfInfo.y = uint(textHeight * .5);
 			
@@ -70,7 +70,7 @@ package com.renatus.games.reversi.view.intro
 			
 			_btnChipFirst = new Button(assetManager.getTexture(_chipAssetPrefixName+CellState.PLAYER_FIRST.toFixed()));
 			_btnChipFirst.scaleWhenDown = .9;
-			_btnChipFirst.scaleWhenOver = .95;
+			_btnChipFirst.scaleWhenOver = 1.1;
 			_btnChipFirst.y = (_background.height - _btnChipFirst.height) * .5;
 			_btnChipFirst.x = _background.width * .5 - _btnChipFirst.width;
 			
@@ -78,12 +78,51 @@ package com.renatus.games.reversi.view.intro
 			
 			_btnChipSecond = new Button(assetManager.getTexture(_chipAssetPrefixName+CellState.PLAYER_SECOND.toFixed()));
 			_btnChipSecond.scaleWhenDown = .9;
-			_btnChipSecond.scaleWhenOver = .95;
+			_btnChipSecond.scaleWhenOver = 1.1;
 			_btnChipSecond.y = (_background.height - _btnChipSecond.height) * .5;
 			_btnChipSecond.x = _background.width * .5 + _btnChipSecond.width * .5;
 			
 			addChild( _btnChipSecond );			
 			
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		public override  function dispose():void 
+		{
+			
+			if (_btnPlay)
+			{
+				_btnPlay.removeFromParent(true);
+				_btnPlay = null;
+			}
+			
+			if (_background)
+			{
+				_background.removeFromParent( true );
+				_background = null;
+			}
+			
+			if ( _tfInfo )
+			{
+				_tfInfo.removeFromParent( true );
+				_tfInfo = null;
+			}
+			
+			if ( _btnChipFirst )
+			{
+				_btnChipFirst.removeFromParent(true);
+				_btnChipFirst = null;
+			}
+			
+			if ( _btnChipSecond )
+			{
+				_btnChipSecond.removeFromParent(true);
+				_btnChipFirst = null;
+			}
+			
+			super.dispose();
 		}
 		
 		public function get btnPlay():Button{ return _btnPlay; }

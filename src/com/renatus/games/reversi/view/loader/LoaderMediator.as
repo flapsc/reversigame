@@ -1,6 +1,6 @@
 package com.renatus.games.reversi.view.loader 
 {
-	import com.renatus.games.reversi.controller.assets.AssetsEvent;
+	import com.renatus.games.reversi.controller.assets.events.AssetsEvent;
 	import com.renatus.games.reversi.services.view.impl.starling.BaseStarlingMediator;
 	import starling.utils.AssetManager;
 	
@@ -24,7 +24,7 @@ package com.renatus.games.reversi.view.loader
 		public function LoaderMediator(){}
 		
 		
-		override protected function drawView():void 
+		protected override  function drawView():void 
 		{
 			super.drawView();
 			_loaderView = _baseView as LoaderView;
@@ -50,6 +50,11 @@ package com.renatus.games.reversi.view.loader
 			{
 				_loaderView.updateProgress( progress );
 			}
+		}
+		public override  function destroy():void 
+		{
+			_loaderView = null;
+			super.destroy();
 		}
 	}
 }

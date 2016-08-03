@@ -19,6 +19,7 @@ package com.renatus.games.reversi.services.view.impl.starling
 		 */
 		public function BaseStarlingView() 
 		{
+			//addEventListener(
 		}
 		
 		/**

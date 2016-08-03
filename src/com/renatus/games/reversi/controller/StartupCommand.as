@@ -1,15 +1,21 @@
 package com.renatus.games.reversi.controller 
 {
 	import com.renatus.games.reversi.IGameContext;
-	import com.renatus.games.reversi.controller.assets.AssetsEvent;
+	import com.renatus.games.reversi.controller.assets.events.AssetsEvent;
 	import com.renatus.games.reversi.controller.assets.ExternalAssetsLoadedCommand;
 	import com.renatus.games.reversi.controller.assets.LoadExternalAssetsCommand;
+	import com.renatus.games.reversi.controller.game.StartGameCommand;
+	import com.renatus.games.reversi.controller.game.events.GameStateEvent;
 	import com.renatus.games.reversi.controller.view.HideViewCommand;
 	import com.renatus.games.reversi.controller.view.ShowViewCommand;
 	import com.renatus.games.reversi.controller.view.events.ViewEvent;
 	import com.renatus.games.reversi.services.fonts.StaticFontService;
 	import com.renatus.games.reversi.services.view.api.IViewManager;
 	import com.renatus.games.reversi.view.GameViewEnums;
+	import com.renatus.games.reversi.view.game.GameView;
+	import com.renatus.games.reversi.view.game.GameViewMediator;
+	import com.renatus.games.reversi.view.gameend.GameEndMediator;
+	import com.renatus.games.reversi.view.gameend.GameEndView;
 	import com.renatus.games.reversi.view.intro.IntroMediator;
 	import com.renatus.games.reversi.view.intro.IntroView;
 	import com.renatus.games.reversi.view.loader.LoaderMediator;
@@ -68,12 +74,17 @@ package com.renatus.games.reversi.controller
 			//register assets commands
 			context.registrerCommand(AssetsEvent.LOAD_EXTERNAL_ASSETS, LoadExternalAssetsCommand, true );
 			context.registrerCommand(AssetsEvent.EXTERNAL_ASSETS_LOADED, ExternalAssetsLoadedCommand, true );
+			
+			//register game state commands
+			context.registrerCommand( GameStateEvent.START_GAME, StartGameCommand );
 		}
 		
 		private function registerViews( viewManager:IViewManager ):void
 		{
 			viewManager.registerView(GameViewEnums.LOADER, LoaderView, LoaderMediator);
 			viewManager.registerView(GameViewEnums.INTRO, IntroView, IntroMediator);
+			viewManager.registerView(GameViewEnums.GAME_STATE, GameView, GameViewMediator);
+			viewManager.registerView(GameViewEnums.GAME_END, GameEndView, GameEndMediator);
 		}
 		
 		

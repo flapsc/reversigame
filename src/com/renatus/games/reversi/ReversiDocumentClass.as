@@ -33,6 +33,9 @@ package com.renatus.games.reversi
 			{
 				removeEventListener(Event.ADDED_TO_STAGE, init);
 			}
+			
+			
+			
 			_gameContext = new GameContext();
 			_gameContext.registrerCommand(Event.COMPLETE, StartupCommand, true);
 			_gameContext.init(stage, StarlingViewManager, ReversiGameModel, TraceLogger);

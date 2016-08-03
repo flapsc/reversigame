@@ -29,11 +29,31 @@ package com.renatus.games.reversi.model
 		function get fieldCells():IFieldCells;
 		
 		/**
+		 * Current player for move.
+		 */
+		function get playerForMove():IPlayer;
+		
+		function get playerForMoveIndex():uint;
+		
+		/**
+		 * Switch player for move.
+		 */
+		function switchPlayer():void;
+		
+		/**
 		 * Current human state choose.
 		 */
 		function set humanStateChoose( value:uint ):void;
 		function get humanStateChoose():uint;
 		
+		function set playerNoMovesCount(val:uint):void;
+		function get playerNoMovesCount():uint;
+		
+		function isGameEnd():Boolean;
+		
+		function get winner():IPlayer;
+		
+		function get players():Vector.<IPlayer>;
 	}
 	
 }
